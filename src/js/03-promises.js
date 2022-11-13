@@ -9,8 +9,8 @@ function onFormSubmit(event) {
   let delay = Number(form.elements.delay.value);
   let step = Number(form.elements.step.value);
   let amount = Number(form.elements.amount.value);
-  for (let i = 0; i < amount; i += 1) {
-    createPromise(i + 1, delay)
+  for (let i = 1; i <= amount; i += 1) {
+    createPromise(i, delay)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(
           `✅ Fulfilled promise ${position} in ${delay}ms`
