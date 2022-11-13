@@ -10,7 +10,7 @@ const today = Date.now();
 startBtn.disabled = true;
 dateInput.disabled = false;
 
-const flatpickr = flatpickr(dateInput, {
+const options = {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
@@ -23,7 +23,9 @@ const flatpickr = flatpickr(dateInput, {
       startBtn.disabled = false;
     }
   },
-});
+};
+
+flatpickr(dateInput, options);
 
 startBtn.addEventListener('click', onStartBtnClick);
 
